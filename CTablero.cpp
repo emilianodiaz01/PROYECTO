@@ -43,13 +43,32 @@ CTablero::~CTablero() {
 
 void CTablero::mostrar() {
     cout << "Tablero de " << tipoTablero << "x" << tipoTablero << " (Matriz interna " << tableroInterno << "x" << tableroInterno << "):\n\n";
-    for (int i = 0; i < tableroInterno; i++) {
-        for (int j = 0; j < tableroInterno; j++) {
+    cout <<  "    ";
+    for (int j = 1; j < tableroInterno; i++) {
+        cout << j;
+        if (j < 10){
+            cout << "     ";
+        }else {
+            cout << " ";
+        }
+        cout << endl;
+        int filas = 1;
+        for(int i = 0, i < tableroInterno; i++){
+            if(i% 2 == 0 && filas <= tipoTablero){
+                if (filas < 10) {
+                    cout <<" " << filas  << " ";
+                }else {
+                    cout << filas << " ";
+                }
+                filas++;
+        }else {
+            cout << "    ";
+        }
+        for (int i = 0; i < tableroInterno; j++) {
             cout << " " << tablero[i][j]->getSimbolo() << " ";
         }
         cout << endl;
     }
-
 }
 
 void CTablero::revisarTablero() {
